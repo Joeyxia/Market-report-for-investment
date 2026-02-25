@@ -20,7 +20,7 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -31,81 +31,45 @@
         .header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 60px 40px;
+            padding: 40px;
             text-align: center;
         }
         
         .header h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 10px;
             font-weight: 300;
         }
         
-        .description {
-            font-size: 1.2em;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
         .reports-list {
-            padding: 40px;
-        }
-        
-        .reports-list h2 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 2em;
+            padding: 30px;
         }
         
         .report-item {
-            background: #f8f9fa;
-            padding: 20px;
             margin: 15px 0;
-            border-radius: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
             border-left: 4px solid #3498db;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .report-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .report-item a {
             text-decoration: none;
             color: #2c3e50;
-            font-size: 1.2em;
             font-weight: bold;
+            font-size: 1.2em;
         }
         
         .report-item a:hover {
             color: #3498db;
         }
         
-        .date {
+        .footer {
+            text-align: center;
+            padding: 20px;
             color: #7f8c8d;
             font-size: 0.9em;
-            margin-top: 5px;
-        }
-        
-        @media (max-width: 768px) {
-            .header {
-                padding: 40px 20px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .reports-list {
-                padding: 20px;
-            }
-            
-            .report-item {
-                padding: 15px;
-            }
+            border-top: 1px solid #ecf0f1;
         }
     </style>
 </head>
@@ -113,18 +77,22 @@
     <div class="container">
         <div class="header">
             <h1>📊 宏观经济模型报告</h1>
-            <p class="description">每日市场分析与投资建议 - 基于官方数据和实时验证</p>
         </div>
         
         <div class="reports-list">
-            <h2>📈 每日报告</h2>
+            <h2 style="margin: 20px 30px; color: #2c3e50;">📈 最新报告</h2>
             
             <div class="report-item">
-                <a href="reports/2026-02-25-complete.html">2026年2月25日 - 综合评分: 54.6/100 | 投资信号: 中性偏谨慎</a>
-                <div class="date">发布日期: 2026-02-25</div>
+                <a href="reports/2026-02-26.html">2026年2月26日 - 宏观经济模型报告</a>
             </div>
             
-            <!-- 更多报告将自动添加到这里 -->
+            <div class="report-item">
+                <a href="reports/2026-02-25.html">2026年2月25日 - 宏观经济模型报告</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>每日更新 | 基于官方数据和市场分析</p>
         </div>
     </div>
 </body>
