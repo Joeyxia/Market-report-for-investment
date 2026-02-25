@@ -31,7 +31,7 @@
         .header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 40px 30px;
+            padding: 40px;
             text-align: center;
         }
         
@@ -41,50 +41,55 @@
             font-weight: 300;
         }
         
-        .score-container {
-            background: #ecf0f1;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        
         .score {
             font-size: 2em;
             font-weight: bold;
-            color: #27ae60;
-            margin: 10px 0;
+            margin: 20px 0;
+            color: #3498db;
         }
         
         .signal {
-            font-size: 1.2em;
-            color: #e74c3c;
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: bold;
         }
         
-        .core-conclusion {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 20px;
-            margin: 20px 0;
+        .conclusion {
+            background: #ecf0f1;
+            padding: 30px;
+            margin: 30px;
+            border-left: 5px solid #3498db;
             border-radius: 8px;
         }
         
-        .core-conclusion h2 {
-            color: #856404;
+        .conclusion h2 {
+            color: #2c3e50;
             margin-bottom: 15px;
+            font-size: 1.8em;
         }
         
-        .dimensions {
-            padding: 30px;
+        .conclusion ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .conclusion li {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .dimension {
-            margin-bottom: 30px;
-            padding: 20px;
+            padding: 30px;
+            margin: 20px 30px;
+            border: 1px solid #ecf0f1;
             border-radius: 10px;
             background: #f8f9fa;
-            border-left: 4px solid #3498db;
         }
         
         .dimension h3 {
@@ -92,23 +97,16 @@
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
         }
         
-        .dimension-score {
-            background: #e8f4fd;
-            padding: 10px;
-            border-radius: 5px;
+        .dimension h3 span {
+            margin-left: 10px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .dimension p {
             margin: 10px 0;
-        }
-        
-        .dimension-content ul {
-            padding-left: 20px;
-            margin: 10px 0;
-        }
-        
-        .dimension-content li {
-            margin: 8px 0;
         }
         
         .verified {
@@ -116,40 +114,31 @@
             font-weight: bold;
         }
         
-        .section {
-            margin: 30px 0;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .section h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #3498db;
-        }
-        
         .footer {
             text-align: center;
             padding: 20px;
             color: #7f8c8d;
             font-size: 0.9em;
-            background: #ecf0f1;
+            border-top: 1px solid #ecf0f1;
+            margin-top: 20px;
         }
         
         @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+            
             .header h1 {
                 font-size: 1.8em;
             }
             
-            .dimensions {
-                padding: 15px;
-            }
-            
             .score {
                 font-size: 1.5em;
+            }
+            
+            .conclusion, .dimension {
+                margin: 15px;
+                padding: 20px;
             }
         }
     </style>
@@ -157,18 +146,15 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 今日终极版宏观经济模型报告</h1>
-            <p>2026年2月25日</p>
-        </div>
-        
-        <div class="score-container">
+            <h1>📊 宏观经济模型报告</h1>
+            <div class="date">2026年2月25日</div>
             <div class="score">综合评分: 54.6/100</div>
             <div class="signal">投资信号: 中性偏谨慎</div>
         </div>
         
-        <div class="core-conclusion">
+        <div class="conclusion">
             <h2>🚨 核心结论</h2>
-            <p><strong>54.6分重回50分以上！</strong> 基于<strong>已验证的官方数据</strong>和<strong>最新市场信息</strong>：</p>
+            <p><strong>54.6分重回50分以上！</strong> 基于已验证的官方数据和最新市场信息：</p>
             <ul>
                 <li><strong>收益率曲线已转正</strong>：10Y-3M利差为<strong>+35个基点</strong>（✅ 已验证）</li>
                 <li><strong>SOFR大幅下降</strong>至3.66%（流动性改善）</li>
@@ -177,224 +163,82 @@
             </ul>
         </div>
         
-        <div class="dimensions">
-            <h2>🧬 10维度修正版模型详细分析</h2>
-            
-            <div class="dimension">
-                <h3>1. 🏦 货币政策与金融条件 (权重18% | 68分)</h3>
-                <div class="dimension-score">⬆️ 加权贡献: 12.24分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>收益率曲线</strong>: <span class="verified">10Y-3M利差+35bps</span>（✅ <strong>已通过美国财政部官网验证</strong>：2026年2月24日数据，10年期4.04%，3个月3.69%），倒挂信号完全消除</li>
-                        <li><strong>SOFR</strong>: <strong>3.66%</strong>（隔夜流动性压力显著缓解）</li>
-                        <li><strong>美联储资产负债表</strong>: <strong>$6.61T</strong>（QT缩表持续进行）</li>
-                        <li><strong>金融条件</strong>: 整体环境从限制性转向中性</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>2. 📉 实体经济与前瞻指标 (权重18% | 55分)</h3>
-                <div class="dimension-score">⬇️ 加权贡献: 9.90分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>GDP增长</strong>: <strong>+1.4%</strong>（年化，低于之前的2.1%），增长动能明显放缓</li>
-                        <li><strong>核心CPI</strong>: <strong>+2.5%</strong> YoY（✅ 符合BLS通胀目标区间）</li>
-                        <li><strong>通胀控制</strong>: 通胀回落至舒适区，为政策转向创造条件</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>3. 🏢 企业基本面与估值 (权重15% | 35分)</h3>
-                <div class="dimension-score">⚠️ 加权贡献: 5.25分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>估值泡沫</strong>: Forward P/E 20.5x仍处历史高位，容错率几乎为零</li>
-                        <li><strong>ERP结构分化</strong>:
-                            <ul>
-                                <li>七巨头ERP: 0.8%（极度泡沫化）</li>
-                                <li>标普493 ERP: 2.1%（相对合理）</li>
-                            </ul>
-                        </li>
-                        <li><strong>策略建议</strong>: 从成长股向价值股/等权重切换</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>4. 🧑‍🤝‍🧑 劳动力与消费健康度 (权重14% | 50分)</h3>
-                <div class="dimension-score">⬇️ 加权贡献: 7.00分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>失业率</strong>: <strong>4.3%</strong>（✅ BLS数据显示劳动力市场温和松动）</li>
-                        <li><strong>K型分化</strong>: 信用卡违约率3.2%持续攀升，底层消费压力加大</li>
-                        <li><strong>消费前景</strong>: 劳动力市场松动可能进一步影响消费信心</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>5. 💧 流动性指标 (权重9% | 65分)</h3>
-                <div class="dimension-score">⬆️ 加权贡献: 5.85分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>SOFR改善</strong>: <strong>3.66%</strong>显示隔夜流动性压力大幅缓解</li>
-                        <li><strong>QT进程</strong>: 美联储资产负债表<strong>$6.61T</strong>，缩表稳步推进</li>
-                        <li><strong>市场活水</strong>: 流动性环境明显改善</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>6. 🏠 房地产市场 (权重7% | 55分)</h3>
-                <div class="dimension-score">⬆️ 加权贡献: 3.85分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>抵押贷款利率</strong>: <strong>6.01%</strong>（显著低于之前的6.8%）</li>
-                        <li><strong>成屋销售</strong>: <strong>391万套</strong>（略有下降但保持稳定）</li>
-                        <li><strong>市场改善</strong>: 融资成本下降为房地产市场提供支撑</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>7. 📊 市场情绪与跨资产波动率 (权重5% | 52分)</h3>
-                <div class="dimension-score">⬆️ 加权贡献: 2.60分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>VIX</strong>: <strong>21.01</strong>（不再是"极度乐观"，波动率回归正常水平）</li>
-                        <li><strong>MOVE</strong>: <strong>68.03</strong>（债市波动率显著下降）</li>
-                        <li><strong>跨资产定价</strong>: 股债波动率背离大幅收窄</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>8. ₿ 加密货币市场指标 (权重5% | 52分)</h3>
-                <div class="dimension-score">🔥 加权贡献: 2.60分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>BTC价格</strong>: $63,741.86，从历史高点回调47%</li>
-                        <li><strong>USDC市值</strong>: <strong>$748.6亿</strong>，系统重要性稳定币地位稳固</li>
-                        <li><strong>监管关注</strong>: Circle作为上市公司受到更严格监管审视</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>9. 🤖 AI发展指标 (权重5% | 60分)</h3>
-                <div class="dimension-score">🔥 加权贡献: 3.00分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>AI芯片需求</strong>: NVIDIA交货周期延长至26周</li>
-                        <li><strong>云AI服务</strong>: AWS/Azure AI服务收入同比增长42%</li>
-                        <li><strong>ROI监控</strong>: 需验证应用端营收贡献率</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="dimension">
-                <h3>10. 🛢️ 大宗商品与外部宏观 (权重4% | 58分)</h3>
-                <div class="dimension-score">加权贡献: 2.32分</div>
-                <div class="dimension-content">
-                    <ul>
-                        <li><strong>全球周期</strong>: 摩根大通全球PMI 50.4触底微升</li>
-                        <li><strong>原油价格</strong>: $72.5/桶，距离$90黑天鹅阈值有安全边际</li>
-                        <li><strong>外部环境</strong>: 无重大地缘政治风险</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="dimension">
+            <h3>1. 🏦 货币政策与金融条件 <span>(权重18% | 68分) ⬆️ 加权贡献: 12.24分</span></h3>
+            <p><strong>收益率曲线</strong>: <span class="verified">10Y-3M利差+35bps</span>（✅ <strong>已通过美国财政部官网验证</strong>：2026年2月24日数据，10年期4.04%，3个月3.69%），倒挂信号完全消除</p>
+            <p><strong>SOFR</strong>: <strong>3.66%</strong>（隔夜流动性压力显著缓解）</p>
+            <p><strong>美联储资产负债表</strong>: <strong>$6.61T</strong>（QT缩表持续进行）</p>
+            <p><strong>金融条件</strong>: 整体环境从限制性转向中性</p>
         </div>
         
-        <div class="section">
-            <h2>🔍 分歧点检测（Divergence Watch）</h2>
-            <p><strong>🆕 当前主要分歧点</strong>：</p>
-            <ol>
-                <li><strong>GDP放缓 vs 流动性改善</strong>
-                    <ul>
-                        <li>GDP降至1.4%（增长动能减弱）vs SOFR降至3.66%（流动性改善）</li>
-                        <li><strong>解读</strong>: 经济软着陆可能性增加</li>
-                    </ul>
-                </li>
-                <li><strong>估值泡沫 vs 基本面改善</strong>
-                    <ul>
-                        <li>Forward P/E 20.5x（高估值）vs 收益率曲线转正（宏观改善）</li>
-                        <li><strong>风险</strong>: 高估值对任何负面消息都极为敏感</li>
-                    </ul>
-                </li>
-                <li><strong>劳动力市场松动 vs 消费分化</strong>
-                    <ul>
-                        <li>失业率4.3%（温和松动）vs 信用卡违约率3.2%（底层压力）</li>
-                        <li><strong>趋势</strong>: K型分化可能进一步加剧</li>
-                    </ul>
-                </li>
-            </ol>
+        <div class="dimension">
+            <h3>2. 📉 实体经济与前瞻指标 <span>(权重18% | 55分) ⬇️ 加权贡献: 9.90分</span></h3>
+            <p><strong>GDP增长</strong>: <strong>+1.4%</strong>（年化，低于之前的2.1%），增长动能明显放缓</p>
+            <p><strong>核心CPI</strong>: <strong>+2.5%</strong> YoY（✅ 符合BLS通胀目标区间）</p>
+            <p><strong>通胀控制</strong>: 通胀回落至舒适区，为政策转向创造条件</p>
         </div>
         
-        <div class="section">
-            <h2>⚠️ 尾部风险对冲建议</h2>
-            <p><strong>🆕 鉴于VIX 21和MOVE 68的正常化</strong>：</p>
-            <ol>
-                <li><strong>降低对冲成本</strong>: VIX 21比16.8更贵，但仍是合理水平</li>
-                <li><strong>选择性对冲</strong>: 重点对冲七巨头集中风险</li>
-                <li><strong>动态调整</strong>: 根据GDP和就业数据调整对冲比例</li>
-            </ol>
+        <div class="dimension">
+            <h3>3. 🏢 企业基本面与估值 <span>(权重15% | 35分) ⚠️ 加权贡献: 5.25分</span></h3>
+            <p><strong>估值泡沫</strong>: Forward P/E 20.5x仍处历史高位，容错率几乎为零</p>
+            <p><strong>ERP结构分化</strong>:</p>
+            <p>- 七巨头ERP: 0.8%（极度泡沫化）</p>
+            <p>- 标普493 ERP: 2.1%（相对合理）</p>
+            <p><strong>策略建议</strong>: 从成长股向价值股/等权重切换</p>
         </div>
         
-        <div class="section">
-            <h2>💡 实战投资建议</h2>
-            <h3>立即行动</h3>
-            <ul>
-                <li>✅ <strong>维持中性仓位</strong>，避免过度防御</li>
-                <li>✅ <strong>精选高质量个股</strong>，避开高估值泡沫</li>
-                <li>✅ <strong>关注价值股和等权重指数</strong></li>
-                <li>✅ <strong>适度配置尾部风险对冲</strong></li>
-            </ul>
-            
-            <h3>风险监控重点</h3>
-            <ul>
-                <li>🔴 <strong>GDP连续季度放缓</strong>（确认衰退风险）</li>
-                <li>🔴 <strong>失业率加速上升</strong>（萨姆规则触发）</li>
-                <li>🔴 <strong>企业财报EPS指引下调</strong></li>
-                <li>🔴 <strong>USDC监管政策变化</strong></li>
-            </ul>
-            
-            <h3>机会观察</h3>
-            <ul>
-                <li>🟡 <strong>估值回调至合理区间</strong>（Forward P/E &lt; 18x）</li>
-                <li>🟡 <strong>ERP回升至2%以上</strong></li>
-                <li>🟡 <strong>AI ROI验证成功</strong></li>
-                <li>🟡 <strong>房地产市场企稳</strong></li>
-            </ul>
+        <div class="dimension">
+            <h3>4. 🧑‍🤝‍🧑 劳动力与消费健康度 <span>(权重14% | 50分) ⬇️ 加权贡献: 7.00分</span></h3>
+            <p><strong>失业率</strong>: <strong>4.3%</strong>（✅ BLS数据显示劳动力市场温和松动）</p>
+            <p><strong>K型分化</strong>: 信用卡违约率3.2%持续攀升，底层消费压力加大</p>
+            <p><strong>消费前景</strong>: 劳动力市场松动可能进一步影响消费信心</p>
         </div>
         
-        <div class="section">
-            <h2>🔔 警报状态</h2>
-            <p><strong>当前状态: 中性偏谨慎</strong></p>
-            <ul>
-                <li><strong>主要风险</strong>: 估值泡沫 + 经济增长放缓</li>
-                <li><strong>积极因素</strong>: 流动性改善 + 通胀控制 + 收益率曲线正常化</li>
-                <li><strong>黑天鹅阈值</strong>: 原油&gt;$90/桶 或 失业率&gt;5.0%</li>
-                <li><strong>建议策略</strong>: 保持适度仓位，精选个股，适度对冲</li>
-            </ul>
+        <div class="dimension">
+            <h3>5. 💧 流动性指标 <span>(权重9% | 65分) ⬆️ 加权贡献: 5.85分</span></h3>
+            <p><strong>SOFR改善</strong>: <strong>3.66%</strong>显示隔夜流动性压力大幅缓解</p>
+            <p><strong>QT进程</strong>: 美联储资产负债表<strong>$6.61T</strong>，缩表稳步推进</p>
+            <p><strong>市场活水</strong>: 流动性环境明显改善</p>
         </div>
         
-        <div class="section">
-            <h2>💎 特别关注：Circle (CRCL) 分析</h2>
-            <ul>
-                <li><strong>USDC $748.6亿</strong>确认系统重要性地位</li>
-                <li><strong>监管环境</strong>: 作为上市公司面临更严格监管</li>
-                <li><strong>投资价值</strong>: 数字资产基础设施核心标的</li>
-                <li><strong>风险考量</strong>: 监管政策变化可能影响业务模式</li>
-            </ul>
+        <div class="dimension">
+            <h3>6. 🏠 房地产市场 <span>(权重7% | 55分) ⬆️ 加权贡献: 3.85分</span></h3>
+            <p><strong>抵押贷款利率</strong>: <strong>6.01%</strong>（显著低于之前的6.8%）</p>
+            <p><strong>成屋销售</strong>: <strong>391万套</strong>（略有下降但保持稳定）</p>
+            <p><strong>市场改善</strong>: 融资成本下降为房地产市场提供支撑</p>
+        </div>
+        
+        <div class="dimension">
+            <h3>7. 📊 市场情绪与跨资产波动率 <span>(权重5% | 52分) ⬆️ 加权贡献: 2.60分</span></h3>
+            <p><strong>VIX</strong>: <strong>21.01</strong>（不再是"极度乐观"，波动率回归正常水平）</p>
+            <p><strong>MOVE</strong>: <strong>68.03</strong>（债市波动率显著下降）</p>
+            <p><strong>跨资产定价</strong>: 股债波动率背离大幅收窄</p>
+        </div>
+        
+        <div class="dimension">
+            <h3>8. ₿ 加密货币市场指标 <span>(权重5% | 52分) 🔥 加权贡献: 2.60分</span></h3>
+            <p><strong>BTC价格</strong>: $63,741.86，从历史高点回调47%</p>
+            <p><strong>USDC市值</strong>: <strong>$748.6亿</strong>，系统重要性稳定币地位稳固</p>
+            <p><strong>监管关注</strong>: Circle作为上市公司受到更严格监管审视</p>
+        </div>
+        
+        <div class="dimension">
+            <h3>9. 🤖 AI发展指标 <span>(权重5% | 60分) 🔥 加权贡献: 3.00分</span></h3>
+            <p><strong>AI芯片需求</strong>: NVIDIA交货周期延长至26周</p>
+            <p><strong>云AI服务</strong>: AWS/Azure AI服务收入同比增长42%</p>
+            <p><strong>ROI监控</strong>: 需验证应用端营收贡献率</p>
+        </div>
+        
+        <div class="dimension">
+            <h3>10. 🛢️ 大宗商品与外部宏观 <span>(权重4% | 58分) 加权贡献: 2.32分</span></h3>
+            <p><strong>全球周期</strong>: 摩根大通全球PMI 50.4触底微升</p>
+            <p><strong>原油价格</strong>: $72.5/桶，距离$90黑天鹅阈值有安全边际</p>
+            <p><strong>外部环境</strong>: 无重大地缘政治风险</p>
         </div>
         
         <div class="footer">
-            <p><strong>记住</strong>: 54.6分反映了一个<strong>复杂但相对健康的市场环境</strong>。经济增长放缓但通胀受控，流动性改善但估值仍高。此时需要的是<strong>平衡和选择性</strong>，而非极端的防御或进攻。</p>
-            <p><strong>数据来源</strong>: 美国财政部、BLS等官方机构 + 最新市场数据</p>
-            <p><strong>数据验证状态</strong>: 已验证: 10Y-3M利差（+35bps，美国财政部2026-02-24）| 已验证: 失业率4.3%（BLS数据）| 已验证: 核心CPI 2.5%（BLS通胀目标区间）</p>
-            <p><strong>综合评分计算</strong>: 54.61分 → <strong>54.6分</strong> ✅ <strong>已校准</strong></p>
+            <p>数据来源: 美国财政部、BLS等官方机构 + 最新市场数据 | 综合评分计算: 54.61分 → 54.6分 ✅</p>
+            <p>记住: 54.6分反映了一个复杂但相对健康的市场环境。经济增长放缓但通胀受控，流动性改善但估值仍高。</p>
         </div>
     </div>
 </body>
