@@ -1,0 +1,172 @@
+/* 市场报告网站通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.report-list {
+    padding: 30px;
+    margin: 20px;
+}
+
+.report-item {
+    background: #f8f9fa;
+    border: 1px solid #ecf0f1;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.report-item h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.report-item a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.report-item a:hover {
+    text-decoration: underline;
+}
+
+.score {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.signal {
+    display: inline-block;
+    background: #f39c12;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    font-size: 0.9em;
+    border-top: 1px solid #ecf0f1;
+    margin-top: 20px;
+}
+
+/* 报告详情页样式 */
+.report-detail .conclusion {
+    background: #ecf0f1;
+    padding: 30px;
+    margin: 30px;
+    border-left: 5px solid #3498db;
+    border-radius: 8px;
+}
+
+.report-detail .conclusion h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.report-detail .conclusion ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.report-detail .conclusion li {
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.report-detail .dimension {
+    padding: 30px;
+    margin: 20px 30px;
+    border: 1px solid #ecf0f1;
+    border-radius: 10px;
+    background: #f8f9fa;
+}
+
+.report-detail .dimension h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.report-detail .dimension h3 span {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.report-detail .dimension p {
+    margin: 10px 0;
+}
+
+.report-detail .verified {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.8em;
+    }
+    
+    .report-list, .report-detail .conclusion, .report-detail .dimension {
+        margin: 15px;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宏观经济模型报告</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // 动态加载报告列表
+        async function loadReports() {
+            try {
+                const response = await fetch('reports_list.json');
+                if (!response.ok) {
+                    // 如果没有JSON文件，使用默认列表
+                    displayDefaultReports();
+                    return;
+                }
+                const reports = await response.json();
+                displayReports(reports);
+            } catch (error) {
+                console.log('加载报告列表失败，使用默认列表:', error);
+                displayDefaultReports();
+            }
+        }
+
+        function displayDefaultReports() {
+            const reports = [
+                {date: '2026-02-26', title: '2026年2月26日'},
+                {date: '2026-02-25', title: '2026年2月25日'}
+            ];
+            displayReports(reports);
+        }
+
+        function displayReports(reports) {
+            const container = document.getElementById('reports-container');
+            container.innerHTML = '';
+            
+            reports.forEach(report => {
+                const reportDiv = document.createElement('div');
+                reportDiv.className = 'report-item';
+                reportDiv.innerHTML = `
+                    <h3><a href="reports/${report.date}.html">${report.title}</a></h3>
+                    <p>综合评分: ${report.score || 'N/A'} | 投资信号: ${report.signal || 'N/A'}</p>
+                `;
+                container.appendChild(reportDiv);
+            });
+        }
+
+        // 页面加载时获取报告列表
+        document.addEventListener('DOMContentLoaded', loadReports);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 宏观经济模型报告</h1>
+            <p>每日市场分析与投资建议</p>
+        </div>
+        
+        <div class="content">
+            <h2>📈 最新报告</h2>
+            <div id="reports-container">
+                <!-- 报告列表将在这里动态加载 -->
+                <p>加载中...</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>数据来源: 美国财政部、BLS等官方机构 | 更新时间: <span id="update-time"></span></p>
+            <script>
+                document.getElementById('update-time').textContent = new Date().toLocaleString('zh-CN');
+            </script>
+        </div>
+    </div>
+</body>
+</html>

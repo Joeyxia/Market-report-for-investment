@@ -1,0 +1,51 @@
+{
+  "alert_settings": {
+    "enabled": true,
+    "notification_channels": ["feishu"],
+    "alert_thresholds": {
+      "fed_rate_change": 0.25,
+      "vix_spike": 10,
+      "sp500_drop": 2.0,
+      "dollar_index_move": 1.0,
+      "treasury_yield_move": 0.10,
+      "cpi_surprise": 0.2
+    },
+    "schedule": {
+      "daily_summary": "09:00",
+      "market_open_check": "21:30",
+      "economic_data_alerts": "as_released"
+    }
+  },
+  "key_indicators": [
+    {
+      "name": "Federal Funds Rate",
+      "source": "federalreserve.gov",
+      "alert_on_change": true
+    },
+    {
+      "name": "VIX Index", 
+      "source": "cboe.com",
+      "alert_on_spike": true
+    },
+    {
+      "name": "S&P 500",
+      "source": "marketwatch.com",
+      "alert_on_drop": true
+    },
+    {
+      "name": "US Dollar Index (DXY)",
+      "source": "tradingview.com",
+      "alert_on_move": true
+    },
+    {
+      "name": "10-Year Treasury Yield",
+      "source": "treasury.gov",
+      "alert_on_move": true
+    },
+    {
+      "name": "CPI Inflation Data",
+      "source": "bls.gov",
+      "alert_on_surprise": true
+    }
+  ]
+}

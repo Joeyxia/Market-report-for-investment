@@ -1,0 +1,101 @@
+{
+  "google": {
+    "symbol": "GOOGL",
+    "name": "Google",
+    "alert_rules": {
+      "price_drop": -8,
+      "volume_spike": 2.0,
+      "macro_triggers": ["10y_treasury_yield", "vix_index"],
+      "priority": "medium"
+    },
+    "description": "科技巨头，相对稳健，关注利率敏感度"
+  },
+  "circle": {
+    "symbol": "CRCL",
+    "name": "Circle",
+    "alert_rules": {
+      "price_drop": -15,
+      "volume_spike": 3.0,
+      "macro_triggers": ["m2_money_supply", "fed_balance_sheet", "crypto_regulation"],
+      "priority": "high"
+    },
+    "description": "加密货币相关，高波动性，监管风险高"
+  },
+  "robinhood": {
+    "symbol": "HOOD",
+    "name": "Robinhood",
+    "alert_rules": {
+      "price_drop": -12,
+      "volume_spike": 2.5,
+      "macro_triggers": ["interest_rates", "retail_trading_volume", "vix_index"],
+      "priority": "high"
+    },
+    "description": "金融科技，受利率和市场情绪影响大"
+  },
+  "pdd": {
+    "symbol": "PDD",
+    "name": "PDD Holdings",
+    "alert_rules": {
+      "price_drop": -10,
+      "volume_spike": 2.0,
+      "macro_triggers": ["china_economic_data", "usd_cny_rate", "consumer_confidence"],
+      "priority": "medium"
+    },
+    "description": "中概股龙头，关注中国消费和汇率"
+  },
+  "tesla": {
+    "symbol": "TSLA",
+    "name": "Tesla",
+    "alert_rules": {
+      "price_drop": -12,
+      "volume_spike": 2.5,
+      "macro_triggers": ["ev_subsidies", "lithium_prices", "10y_treasury_yield"],
+      "priority": "high"
+    },
+    "description": "高估值电动车，对利率和大宗商品敏感"
+  },
+  "didi": {
+    "symbol": "DIDI",
+    "name": "Didi Global",
+    "alert_rules": {
+      "price_drop": -15,
+      "volume_spike": 3.0,
+      "macro_triggers": ["china_regulation", "usd_cny_rate", "ride_sharing_demand"],
+      "priority": "high"
+    },
+    "description": "中概股，监管风险高，流动性关注"
+  },
+  "solana": {
+    "symbol": "SOL",
+    "name": "Solana",
+    "alert_rules": {
+      "price_drop": -20,
+      "volume_spike": 4.0,
+      "macro_triggers": ["bitcoin_price", "crypto_regulation", "m2_money_supply"],
+      "priority": "critical"
+    },
+    "description": "加密货币，极高波动性，流动性高度敏感"
+  },
+  "ctrip": {
+    "symbol": "TCOM",
+    "name": "Ctrip (Trip.com)",
+    "alert_rules": {
+      "price_drop": -10,
+      "volume_spike": 2.0,
+      "macro_triggers": ["travel_recovery", "china_economic_data", "oil_prices"],
+      "priority": "medium"
+    },
+    "description": "旅游复苏概念，关注出行需求和油价"
+  },
+  "full_truck_alliance": {
+    "symbol": "YMM",
+    "name": "Full Truck Alliance (满帮)",
+    "alert_rules": {
+      "price_drop": -15,
+      "volume_spike": 2.5,
+      "macro_triggers": ["freight_rates", "china_manufacturing", "logistics_demand"],
+      "priority": "medium"
+    },
+    "description": "物流平台，经济周期敏感度高"
+  }
+}

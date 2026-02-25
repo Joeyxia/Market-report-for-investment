@@ -1,0 +1,120 @@
+{
+  "monetary_policy": {
+    "federal_funds_rate": {
+      "name": "联邦基金利率",
+      "source": "https://fred.stlouisfed.org/series/DFF",
+      "frequency": "daily",
+      "importance": "high"
+    },
+    "treasury_10y": {
+      "name": "10年期国债收益率", 
+      "source": "https://fred.stlouisfed.org/series/DGS10",
+      "frequency": "daily",
+      "importance": "high"
+    },
+    "dxy_index": {
+      "name": "美元指数",
+      "source": "https://fred.stlouisfed.org/series/DTWEXBGS",
+      "frequency": "daily", 
+      "importance": "medium"
+    },
+    "cpi_us": {
+      "name": "美国CPI通胀",
+      "source": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "frequency": "monthly",
+      "importance": "high"
+    }
+  },
+  "economic_growth": {
+    "gdp_us": {
+      "name": "美国GDP增长率",
+      "source": "https://fred.stlouisfed.org/series/GDPC1",
+      "frequency": "quarterly",
+      "importance": "high"
+    },
+    "nonfarm_payrolls": {
+      "name": "非农就业数据",
+      "source": "https://fred.stlouisfed.org/series/PAYEMS", 
+      "frequency": "monthly",
+      "importance": "high"
+    },
+    "unemployment_rate": {
+      "name": "失业率",
+      "source": "https://fred.stlouisfed.org/series/UNRATE",
+      "frequency": "monthly",
+      "importance": "high"
+    },
+    "ism_manufacturing": {
+      "name": "制造业PMI",
+      "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/pmi/",
+      "frequency": "monthly",
+      "importance": "medium"
+    }
+  },
+  "market_sentiment": {
+    "vix_index": {
+      "name": "VIX恐慌指数",
+      "source": "https://fred.stlouisfed.org/series/VIXCLS",
+      "frequency": "daily",
+      "importance": "high"
+    },
+    "sp500_pe": {
+      "name": "标普500市盈率",
+      "source": "https://fred.stlouisfed.org/series/SP500",
+      "frequency": "daily",
+      "importance": "medium"
+    }
+  },
+  "market_liquidity": {
+    "m2_money_supply": {
+      "name": "M2货币供应量",
+      "source": "https://fred.stlouisfed.org/series/M2SL",
+      "frequency": "monthly",
+      "importance": "high"
+    },
+    "fed_balance_sheet": {
+      "name": "美联储资产负债表",
+      "source": "https://fred.stlouisfed.org/series/WALCL",
+      "frequency": "weekly",
+      "importance": "high"
+    },
+    "repo_market_rates": {
+      "name": "回购市场利率",
+      "source": "https://fred.stlouisfed.org/series/RPONTSYD",
+      "frequency": "daily",
+      "importance": "high"
+    },
+    "commercial_paper_spread": {
+      "name": "商业票据利差",
+      "source": "https://fred.stlouisfed.org/series/CP3M",
+      "frequency": "daily",
+      "importance": "medium"
+    },
+    "high_yield_spread": {
+      "name": "高收益债利差",
+      "source": "https://fred.stlouisfed.org/series/BAMLC0A0CM",
+      "frequency": "daily",
+      "importance": "medium"
+    },
+    "dollar_swap_spreads": {
+      "name": "美元互换利差",
+      "source": "https://fred.stlouisfed.org/series/IC4WSA",
+      "frequency": "daily",
+      "importance": "medium"
+    }
+  },
+  "commodities": {
+    "wti_oil": {
+      "name": "WTI原油价格",
+      "source": "https://fred.stlouisfed.org/series/DCOILWTICO",
+      "frequency": "daily", 
+      "importance": "medium"
+    },
+    "gold_price": {
+      "name": "黄金价格",
+      "source": "https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM",
+      "frequency": "daily",
+      "importance": "medium"
+    }
+  }
+}
