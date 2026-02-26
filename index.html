@@ -3,99 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>市场报告 - 投资决策支持</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
-<body class="dark-theme">
-    <div class="tech-container">
-        <!-- Header with animated gradient -->
-        <header class="tech-header">
-            <div class="header-content">
-                <div class="header-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M18 15L21 18L18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M15 3L18 6L15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6 12H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h1 class="tech-title">📊 市场报告 - 投资决策支持</h1>
-                <p class="tech-subtitle">基于12维度宏观经济模型的每日市场分析</p>
-                <div class="glowing-badge">
-                    <span class="badge-text">56.8分</span>
-                </div>
-            </div>
-            <div class="animated-grid"></div>
-        </header>
+    <title>12D 宏观经济模型 | 56.8分</title>
+    <style>
+        :root {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --card-bg: #1e1e1e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-blue: #4a9eff;
+            --accent-green: #4ade80;
+            --accent-red: #f87171;
+            --border-color: #2d2d2d;
+            --score-glow: rgba(74, 158, 255, 0.3);
+        }
 
-        <!-- Info Box with tech styling -->
-        <div class="tech-info-box">
-            <div class="info-item">
-                <div class="info-icon">📈</div>
-                <div class="info-content">
-                    <strong>报告更新时间：</strong>工作日 09:00 (中国时间) & 22:00 (北京时间)
-                </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .score-display {
+            font-size: 6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-blue), #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px var(--score-glow);
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .model-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .score-display {
+                font-size: 4rem;
+            }
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .score-display {
+                font-size: 3rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="score-display">56.8</div>
+            <div class="model-title">12维度宏观经济模型</div>
+        </div>
+        
+        <div class="grid">
+            <!-- 货币政策 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#4a9eff" stroke-width="2"/>
+                    <path d="M8 12H16" stroke="#4a9eff" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 8V16" stroke="#4a9eff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3 class="card-title">货币政策</h3>
+                <p class="card-desc">央行利率政策、货币供应量、量化宽松等对经济的影响评估</p>
             </div>
-            <div class="info-item">
-                <div class="info-icon">🔍</div>
-                <div class="info-content">
-                    <strong>数据来源：</strong>美国财政部、BLS、美联储等官方机构
-                </div>
+
+            <!-- 实体经济 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 9L12 2L22 9" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 15L12 22L22 15" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 5L22 12" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 18L12 11L22 18" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="card-title">实体经济</h3>
+                <p class="card-desc">GDP增长、工业产出、制造业PMI等实际经济活动指标</p>
+            </div>
+
+            <!-- 企业估值 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12L11 14L15 10" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#f87171" stroke-width="2"/>
+                </svg>
+                <h3 class="card-title">企业估值</h3>
+                <p class="card-desc">上市公司PE、PB比率、EV/EBITDA等估值水平分析</p>
+            </div>
+
+            <!-- 劳动力市场 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#60a5fa" stroke-width="2"/>
+                    <path d="M3 21V19C3 16.7909 4.79086 15 7 15H17C19.2091 15 21 16.7909 21 19V21" stroke="#60a5fa" stroke-width="2"/>
+                    <path d="M12 11V21" stroke="#60a5fa" stroke-width="2"/>
+                </svg>
+                <h3 class="card-title">劳动力市场</h3>
+                <p class="card-desc">失业率、就业数据、工资增长、劳动参与率等指标</p>
+            </div>
+
+            <!-- 流动性 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#8b5cf6" stroke-width="2"/>
+                    <path d="M8 12H16" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 8V16" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3 class="card-title">流动性</h3>
+                <p class="card-desc">市场资金充裕程度、银行间拆借利率、信用利差等</p>
+            </div>
+
+            <!-- 房地产 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 21V10L12 3L21 10V21" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 21V12H15V21" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="card-title">房地产</h3>
+                <p class="card-desc">房价指数、房地产投资、销售数据、库存水平等</p>
+            </div>
+
+            <!-- 市场情绪 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#f59e0b" stroke-width="2"/>
+                    <path d="M15 9L9 15" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 9L15 15" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3 class="card-title">市场情绪</h3>
+                <p class="card-desc">投资者信心指数、恐慌贪婪指数、波动率指标等</p>
+            </div>
+
+            <!-- 加密货币 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="card-title">加密货币</h3>
+                <p class="card-desc">比特币、以太坊等主流加密资产价格及市场动态</p>
+            </div>
+
+            <!-- AI发展 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#10b981" stroke-width="2"/>
+                    <path d="M8 12H16" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 8V16" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3 class="card-title">AI发展</h3>
+                <p class="card-desc">人工智能技术进展、算力需求、AI芯片、大模型发展</p>
+            </div>
+
+            <!-- 大宗商品 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3V21" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 3V21" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M15 3V21" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M21 3V21" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3 class="card-title">大宗商品</h3>
+                <p class="card-desc">原油、黄金、铜、农产品等大宗商品价格走势</p>
+            </div>
+
+            <!-- 跨境资本流动 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21L21 17L17 13" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 13L7 17L3 21" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 17H21" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M17 3L21 7L17 11" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 11L7 7L3 3" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 7H21" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3 class="card-title">跨境资本流动</h3>
+                <p class="card-desc">外资流入流出、汇率变动、国际收支平衡等</p>
+            </div>
+
+            <!-- 极端流动性预警 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 9V11M12 15H12.01M5.07183 19H18.9282C20.4678 19 21.4301 17.3333 20.6603 16L13.7321 4C12.9623 2.66667 11.0378 2.66667 10.268 4L3.33978 16C2.56998 17.3333 3.53223 19 5.07183 19Z" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="card-title">极端流动性预警</h3>
+                <p class="card-desc">金融市场压力指标、流动性枯竭风险、系统性风险预警</p>
             </div>
         </div>
-
-        <!-- Report List with modern cards -->
-        <main class="tech-main">
-            <h2 class="section-title">📅 最新报告</h2>
-            
-            <div class="report-cards">
-                <!-- Latest Report Card -->
-                <div class="tech-card report-card active">
-                    <div class="card-header">
-                        <div class="date-score">
-                            <span class="report-date">2026-02-26</span>
-                            <span class="score-badge">综合评分: 56.8/100</span>
-                        </div>
-                        <div class="signal-badge">投资信号: 中性偏谨慎</div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="reports/2026-02-26.html" class="tech-button primary">查看报告</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <!-- Previous Report Card -->
-                <div class="tech-card report-card">
-                    <div class="card-header">
-                        <div class="date-score">
-                            <span class="report-date">2026-02-25</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="reports/2026-02-25.html" class="tech-button secondary">查看报告</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="tech-footer">
-            <div class="footer-content">
-                <p>© 2026 市场报告 | 每日更新 | 基于12维度宏观经济模型</p>
-                <div class="footer-decor">
-                    <div class="pulse-dot"></div>
-                    <div class="pulse-dot"></div>
-                    <div class="pulse-dot"></div>
-                </div>
-            </div>
-        </footer>
     </div>
-
-    <!-- Floating particles for tech effect -->
-    <div class="floating-particles"></div>
 </body>
 </html>
