@@ -5,235 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>市场报告 - 投资决策支持</title>
     <style>
-        :root {
-            --bg-primary: #0f0f0f;
-            --bg-secondary: #1a1a1a;
-            --card-bg: #1e1e1e;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
-            --accent-blue: #4a9eff;
-            --accent-purple: #6c5ce7;
-            --accent-green: #4ade80;
-            --border-color: #2d2d2d;
-            --score-glow: rgba(74, 158, 255, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
             line-height: 1.6;
-            min-height: 100vh;
-            padding: 2rem;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #4a9eff, #6c5ce7);
             border-radius: 16px;
-            position: relative;
-            overflow: hidden;
         }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            opacity: 0.3;
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         .header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
+            font-size: 28px;
+            margin: 0;
+            font-weight: bold;
         }
-
         .header p {
-            font-size: 1.2rem;
+            font-size: 16px;
             opacity: 0.9;
-            position: relative;
-            z-index: 2;
+            margin-top: 10px;
         }
-
         .info-box {
-            background: var(--card-bg);
-            padding: 1.5rem;
+            background: #1e1e1e;
+            padding: 20px;
             border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid var(--accent-green);
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
+            margin: 20px 0;
+            border-left: 4px solid #4ade80;
+            border: 1px solid #2d2d2d;
         }
-
-        .info-box strong {
-            color: var(--accent-blue);
-        }
-
         .report-list {
-            background: var(--card-bg);
-            padding: 2rem;
+            background: #1e1e1e;
+            padding: 25px;
             border-radius: 16px;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            border: 1px solid #2d2d2d;
         }
-
         .report-list h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-blue);
-            font-weight: 600;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #4a9eff;
+            font-weight: bold;
         }
-
         .report-item {
             display: flex;
             justify-content: space-between;
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
+            padding: 20px;
+            border-bottom: 1px solid #2d2d2d;
             align-items: center;
-            transition: all 0.3s ease;
         }
-
         .report-item:last-child {
             border-bottom: none;
         }
-
-        .report-item:hover {
-            background: rgba(74, 158, 255, 0.1);
-            transform: translateY(-2px);
-            border-radius: 12px;
-        }
-
         .report-date {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
-
         .report-link {
-            color: var(--accent-blue);
+            color: #4a9eff;
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, rgba(74, 158, 255, 0.2), rgba(108, 92, 231, 0.2));
-            border-radius: 50px;
-            font-weight: 600;
+            padding: 12px 24px;
+            background: rgba(74, 158, 255, 0.2);
+            border-radius: 25px;
+            font-weight: bold;
             transition: all 0.3s ease;
             border: 1px solid rgba(74, 158, 255, 0.3);
         }
-
         .report-link:hover {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            background: #4a9eff;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(74, 158, 255, 0.3);
         }
-
         .score-badge {
             background: linear-gradient(135deg, #ffd700, #ff8c00);
             color: #1a1a2e;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-right: 1rem;
-            margin-top: 0.5rem;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 15px;
+            margin-top: 10px;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
-
         .signal-badge {
             background: linear-gradient(135deg, #2196F3, #21CBF3);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
         }
-
         .footer {
             text-align: center;
-            margin-top: 2rem;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+            margin-top: 20px;
+            color: #b0b0b0;
+            font-size: 14px;
         }
-
-        .footer a {
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .header {
-                padding: 1.5rem;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .header p {
-                font-size: 1rem;
-            }
-            
             .report-item {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 1rem;
+                gap: 15px;
             }
-            
             .report-link {
                 align-self: flex-end;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .report-date {
-                font-size: 1.1rem;
-            }
-            
-            .score-badge, .signal-badge {
-                font-size: 0.9rem;
-                padding: 0.4rem 0.8rem;
             }
         }
     </style>
