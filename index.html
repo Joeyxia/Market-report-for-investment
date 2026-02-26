@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0f0f0f;
-            color: #ffffff;
+            background-color: #ffffff;
+            color: #333333;
             margin: 0;
             padding: 20px;
             line-height: 1.6;
@@ -21,45 +21,34 @@
             text-align: center;
             margin-bottom: 30px;
             padding: 30px;
-            background: linear-gradient(135deg, #4a9eff, #6c5ce7);
-            border-radius: 16px;
+            background: #667eea;
+            color: white;
+            border-radius: 10px;
         }
         .header h1 {
             font-size: 28px;
             margin: 0;
-            font-weight: bold;
-        }
-        .header p {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-top: 10px;
         }
         .info-box {
-            background: #1e1e1e;
+            background: #f0f8f0;
             padding: 20px;
-            border-radius: 12px;
+            border-radius: 8px;
             margin: 20px 0;
-            border-left: 4px solid #4ade80;
-            border: 1px solid #2d2d2d;
+            border-left: 4px solid #4CAF50;
         }
         .report-list {
-            background: #1e1e1e;
+            background: white;
             padding: 25px;
-            border-radius: 16px;
+            border-radius: 8px;
             margin-bottom: 20px;
-            border: 1px solid #2d2d2d;
-        }
-        .report-list h2 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: #4a9eff;
-            font-weight: bold;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .report-item {
             display: flex;
             justify-content: space-between;
-            padding: 20px;
-            border-bottom: 1px solid #2d2d2d;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
             align-items: center;
         }
         .report-item:last-child {
@@ -68,54 +57,48 @@
         .report-date {
             font-weight: bold;
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .report-link {
-            color: #4a9eff;
+            color: #667eea;
             text-decoration: none;
-            padding: 12px 24px;
-            background: rgba(74, 158, 255, 0.2);
-            border-radius: 25px;
+            padding: 8px 16px;
+            background: #f0f4ff;
+            border-radius: 5px;
             font-weight: bold;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(74, 158, 255, 0.3);
         }
         .report-link:hover {
-            background: #4a9eff;
+            background: #667eea;
             color: white;
-            transform: translateY(-2px);
         }
         .score-badge {
-            background: linear-gradient(135deg, #ffd700, #ff8c00);
-            color: #1a1a2e;
-            padding: 8px 16px;
-            border-radius: 25px;
+            background: #ffd700;
+            color: #333;
+            padding: 4px 8px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: bold;
-            margin-right: 15px;
-            margin-top: 10px;
-            display: inline-block;
+            margin-right: 10px;
         }
         .signal-badge {
-            background: linear-gradient(135deg, #2196F3, #21CBF3);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 25px;
+            background: #e8f4f8;
+            color: #2196F3;
+            padding: 4px 8px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: bold;
-            display: inline-block;
         }
         .footer {
             text-align: center;
             margin-top: 20px;
-            color: #b0b0b0;
+            color: #666;
             font-size: 14px;
         }
         @media (max-width: 768px) {
             .report-item {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 15px;
+                gap: 10px;
             }
             .report-link {
                 align-self: flex-end;
