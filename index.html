@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宏观经济模型报告 - 2026年2月25日</title>
+    <title>宏观经济模型报告</title>
     <style>
         * {
             margin: 0;
@@ -31,87 +31,75 @@
         .header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 40px;
+            padding: 60px;
             text-align: center;
         }
         
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            margin-bottom: 20px;
             font-weight: 300;
         }
         
-        .score {
-            font-size: 2em;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #3498db;
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
         
-        .signal {
+        .reports-section {
+            padding: 40px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+        }
+        
+        .report-list {
+            display: grid;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .report-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ecf0f1;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .report-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+        
+        .report-date {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .report-score {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .report-signal {
             display: inline-block;
             background: #f39c12;
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-        
-        .conclusion {
-            background: #ecf0f1;
-            padding: 30px;
-            margin: 30px;
-            border-left: 5px solid #3498db;
-            border-radius: 8px;
-        }
-        
-        .conclusion h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-        
-        .conclusion ul {
-            list-style: none;
-            margin-top: 15px;
-        }
-        
-        .conclusion li {
-            margin: 10px 0;
-            padding: 10px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .dimension {
-            padding: 30px;
-            margin: 20px 30px;
-            border: 1px solid #ecf0f1;
+            padding: 2px 8px;
             border-radius: 10px;
-            background: #f8f9fa;
-        }
-        
-        .dimension h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .dimension h3 span {
-            margin-left: 10px;
             font-size: 0.9em;
-            color: #7f8c8d;
-        }
-        
-        .dimension p {
-            margin: 10px 0;
-        }
-        
-        .verified {
-            color: #27ae60;
-            font-weight: bold;
+            margin-left: 10px;
         }
         
         .footer {
@@ -125,20 +113,19 @@
         
         @media (max-width: 768px) {
             .header {
-                padding: 20px;
+                padding: 30px;
             }
             
             .header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
             
-            .score {
-                font-size: 1.5em;
-            }
-            
-            .conclusion, .dimension {
-                margin: 15px;
+            .reports-section {
                 padding: 20px;
+            }
+            
+            .report-list {
+                max-width: 100%;
             }
         }
     </style>
@@ -147,98 +134,29 @@
     <div class="container">
         <div class="header">
             <h1>📊 宏观经济模型报告</h1>
-            <div class="date">2026年2月25日</div>
-            <div class="score">综合评分: 54.6/100</div>
-            <div class="signal">投资信号: 中性偏谨慎</div>
+            <div class="subtitle">每日市场分析与投资决策指南</div>
         </div>
         
-        <div class="conclusion">
-            <h2>🚨 核心结论</h2>
-            <p><strong>54.6分重回50分以上！</strong> 基于已验证的官方数据和最新市场信息：</p>
-            <ul>
-                <li><strong>收益率曲线已转正</strong>：10Y-3M利差为<strong>+35个基点</strong>（✅ 已验证）</li>
-                <li><strong>SOFR大幅下降</strong>至3.66%（流动性改善）</li>
-                <li><strong>VIX上升至21</strong>（波动率回归正常水平）</li>
-                <li><strong>但GDP放缓至1.4%</strong>（增长动能减弱）</li>
-            </ul>
-        </div>
-        
-        <div class="dimension">
-            <h3>1. 🏦 货币政策与金融条件 <span>(权重18% | 68分) ⬆️ 加权贡献: 12.24分</span></h3>
-            <p><strong>收益率曲线</strong>: <span class="verified">10Y-3M利差+35bps</span>（✅ <strong>已通过美国财政部官网验证</strong>：2026年2月24日数据，10年期4.04%，3个月3.69%），倒挂信号完全消除</p>
-            <p><strong>SOFR</strong>: <strong>3.66%</strong>（隔夜流动性压力显著缓解）</p>
-            <p><strong>美联储资产负债表</strong>: <strong>$6.61T</strong>（QT缩表持续进行）</p>
-            <p><strong>金融条件</strong>: 整体环境从限制性转向中性</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>2. 📉 实体经济与前瞻指标 <span>(权重18% | 55分) ⬇️ 加权贡献: 9.90分</span></h3>
-            <p><strong>GDP增长</strong>: <strong>+1.4%</strong>（年化，低于之前的2.1%），增长动能明显放缓</p>
-            <p><strong>核心CPI</strong>: <strong>+2.5%</strong> YoY（✅ 符合BLS通胀目标区间）</p>
-            <p><strong>通胀控制</strong>: 通胀回落至舒适区，为政策转向创造条件</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>3. 🏢 企业基本面与估值 <span>(权重15% | 35分) ⚠️ 加权贡献: 5.25分</span></h3>
-            <p><strong>估值泡沫</strong>: Forward P/E 20.5x仍处历史高位，容错率几乎为零</p>
-            <p><strong>ERP结构分化</strong>:</p>
-            <p>- 七巨头ERP: 0.8%（极度泡沫化）</p>
-            <p>- 标普493 ERP: 2.1%（相对合理）</p>
-            <p><strong>策略建议</strong>: 从成长股向价值股/等权重切换</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>4. 🧑‍🤝‍🧑 劳动力与消费健康度 <span>(权重14% | 50分) ⬇️ 加权贡献: 7.00分</span></h3>
-            <p><strong>失业率</strong>: <strong>4.3%</strong>（✅ BLS数据显示劳动力市场温和松动）</p>
-            <p><strong>K型分化</strong>: 信用卡违约率3.2%持续攀升，底层消费压力加大</p>
-            <p><strong>消费前景</strong>: 劳动力市场松动可能进一步影响消费信心</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>5. 💧 流动性指标 <span>(权重9% | 65分) ⬆️ 加权贡献: 5.85分</span></h3>
-            <p><strong>SOFR改善</strong>: <strong>3.66%</strong>显示隔夜流动性压力大幅缓解</p>
-            <p><strong>QT进程</strong>: 美联储资产负债表<strong>$6.61T</strong>，缩表稳步推进</p>
-            <p><strong>市场活水</strong>: 流动性环境明显改善</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>6. 🏠 房地产市场 <span>(权重7% | 55分) ⬆️ 加权贡献: 3.85分</span></h3>
-            <p><strong>抵押贷款利率</strong>: <strong>6.01%</strong>（显著低于之前的6.8%）</p>
-            <p><strong>成屋销售</strong>: <strong>391万套</strong>（略有下降但保持稳定）</p>
-            <p><strong>市场改善</strong>: 融资成本下降为房地产市场提供支撑</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>7. 📊 市场情绪与跨资产波动率 <span>(权重5% | 52分) ⬆️ 加权贡献: 2.60分</span></h3>
-            <p><strong>VIX</strong>: <strong>21.01</strong>（不再是"极度乐观"，波动率回归正常水平）</p>
-            <p><strong>MOVE</strong>: <strong>68.03</strong>（债市波动率显著下降）</p>
-            <p><strong>跨资产定价</strong>: 股债波动率背离大幅收窄</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>8. ₿ 加密货币市场指标 <span>(权重5% | 52分) 🔥 加权贡献: 2.60分</span></h3>
-            <p><strong>BTC价格</strong>: $63,741.86，从历史高点回调47%</p>
-            <p><strong>USDC市值</strong>: <strong>$748.6亿</strong>，系统重要性稳定币地位稳固</p>
-            <p><strong>监管关注</strong>: Circle作为上市公司受到更严格监管审视</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>9. 🤖 AI发展指标 <span>(权重5% | 60分) 🔥 加权贡献: 3.00分</span></h3>
-            <p><strong>AI芯片需求</strong>: NVIDIA交货周期延长至26周</p>
-            <p><strong>云AI服务</strong>: AWS/Azure AI服务收入同比增长42%</p>
-            <p><strong>ROI监控</strong>: 需验证应用端营收贡献率</p>
-        </div>
-        
-        <div class="dimension">
-            <h3>10. 🛢️ 大宗商品与外部宏观 <span>(权重4% | 58分) 加权贡献: 2.32分</span></h3>
-            <p><strong>全球周期</strong>: 摩根大通全球PMI 50.4触底微升</p>
-            <p><strong>原油价格</strong>: $72.5/桶，距离$90黑天鹅阈值有安全边际</p>
-            <p><strong>外部环境</strong>: 无重大地缘政治风险</p>
+        <div class="reports-section">
+            <h2 class="section-title">📈 最新报告</h2>
+            <div class="report-list">
+                <a href="reports/2026-02-26.html" class="report-item">
+                    <div class="report-date">2026年2月26日</div>
+                    <div>综合评分: 55.2/100 
+                         <span class="report-signal">中性偏谨慎</span>
+                    </div>
+                </a>
+                <a href="reports/2026-02-25.html" class="report-item">
+                    <div class="report-date">2026年2月25日</div>
+                    <div>综合评分: 54.6/100 
+                         <span class="report-signal">中性偏谨慎</span>
+                    </div>
+                </a>
+            </div>
         </div>
         
         <div class="footer">
-            <p>数据来源: 美国财政部、BLS等官方机构 + 最新市场数据 | 综合评分计算: 54.61分 → 54.6分 ✅</p>
-            <p>记住: 54.6分反映了一个复杂但相对健康的市场环境。经济增长放缓但通胀受控，流动性改善但估值仍高。</p>
+            <p>数据来源: 美国财政部、BLS等官方机构 | 更新时间: 2026-02-26</p>
         </div>
     </div>
 </body>
