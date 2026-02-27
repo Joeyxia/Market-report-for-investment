@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据看板 - 市场报告 & OpenViking记忆系统</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .dashboard-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .chart-container {
+            height: 300px;
+            margin: 20px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .recent-list {
+            list-style: none;
+            padding: 0;
+        }
+        .recent-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .recent-item:last-child {
+            border-bottom: none;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background: #5a6fd8;
+        }
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 数据看板</h1>
+            <p>市场报告数据 & OpenViking记忆系统统计</p>
+        </div>
+
+        <!-- 市场报告数据看板 -->
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2 class="card-title">📈 市场报告综合评分趋势</h2>
+                <div class="chart-container">
+                    <canvas id="scoreTrendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h2 class="card-title">📊 维度分数对比</h2>
+                <div class="chart-container">
+                    <canvas id="dimensionScoresChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2 class="card-title">🔍 关键指标监控</h2>
+                <div id="metricsList">
+                    <p>加载中...</p>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h2 class="card-title">🤖 AI Token消耗趋势</h2>
+                <div id="aiTokenData">
+                    <p>加载中...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- OpenViking记忆系统看板 -->
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2 class="card-title">🧠 OpenViking记忆统计</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalMemories">-</div>
+                        <div class="stat-label">总记忆数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="categoryCount">-</div>
+                        <div class="stat-label">分类数量</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="priorityHigh">-</div>
+                        <div class="stat-label">高优先级</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h2 class="card-title">📈 记忆创建趋势</h2>
+                <div class="chart-container">
+                    <canvas id="memoryTrendChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2 class="card-title">📝 最近记忆</h2>
+                <ul class="recent-list" id="recentMemories">
+                    <li>加载中...</li>
+                </ul>
+            </div>
+
+            <div class="dashboard-card">
+                <h2 class="card-title">📊 分类统计</h2>
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <a href="../index.html" class="back-link">← 返回主页</a>
+    </div>
+
+    <script>
+        // 从data.json加载数据
+        async function loadData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                
+                // 渲染所有图表和数据
+                renderScoreTrendChart(data.market_report.reports);
+                renderDimensionScoresChart(data.market_report.dimensions);
+                renderMetricsList(data.market_report.metrics);
+                renderAITokenData(data.market_report.ai_data);
+                renderMemoryStats(data.viking_memory);
+                renderMemoryTrendChart(data.viking_memory.recent_activity);
+                renderRecentMemories(data.viking_memory.recent_memories);
+                renderCategoryChart(data.viking_memory.category_stats);
+                
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                document.body.innerHTML = '<div style="text-align: center; padding: 50px; color: red;">数据加载失败，请稍后重试。</div>';
+            }
+        }
+
+        // 渲染综合评分趋势图
+        function renderScoreTrendChart(reports) {
+            const ctx = document.getElementById('scoreTrendChart').getContext('2d');
+            const dates = reports.map(r => r.date).reverse();
+            const scores = reports.map(r => r.score).reverse();
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: '综合评分',
+                        data: scores,
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            min: 0,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // 渲染维度分数对比图
+        function renderDimensionScoresChart(dimensions) {
+            const ctx = document.getElementById('dimensionScoresChart').getContext('2d');
+            const names = dimensions.map(d => d.name);
+            const scores = dimensions.map(d => d.score);
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: names,
+                    datasets: [{
+                        label: '维度分数',
+                        data: scores,
+                        backgroundColor: '#764ba2'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            min: 0,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // 渲染关键指标列表
+        function renderMetricsList(metrics) {
+            const container = document.getElementById('metricsList');
+            if (metrics.length === 0) {
+                container.innerHTML = '<p>暂无数据</p>';
+                return;
+            }
+            
+            let html = '<ul>';
+            metrics.forEach(metric => {
+                const statusColor = metric.status === '已验证' ? '#4CAF50' : '#FF9800';
+                html += `
+                    <li style="margin: 10px 0; padding: 5px; border-left: 4px solid ${statusColor};">
+                        <strong>${metric.name}:</strong> ${metric.value}
+                        <span style="color: ${statusColor}; font-size: 0.9em;">(${metric.status})</span>
+                    </li>
+                `;
+            });
+            html += '</ul>';
+            container.innerHTML = html;
+        }
+
+        // 渲染AI Token数据
+        function renderAITokenData(aiData) {
+            const container = document.getElementById('aiTokenData');
+            if (!aiData.monthly_tokens) {
+                container.innerHTML = '<p>暂无AI Token数据</p>';
+                return;
+            }
+            
+            container.innerHTML = `
+                <p><strong>月度总消耗:</strong> ${aiData.monthly_tokens}T tokens</p>
+                <p><strong>MOM增长率:</strong> ${aiData.mom_growth}%</p>
+                <p style="font-size: 0.9em; color: #666;">
+                    数据来源: OpenRouter平台（趋势指标）
+                </p>
+            `;
+        }
+
+        // 渲染记忆统计
+        function renderMemoryStats(memoryData) {
+            document.getElementById('totalMemories').textContent = memoryData.total_memories;
+            document.getElementById('categoryCount').textContent = memoryData.category_stats.length;
+            
+            // 计算高优先级记忆数量
+            const highPriority = memoryData.priority_stats.find(p => p.priority === 1) || {count: 0};
+            document.getElementById('priorityHigh').textContent = highPriority.count;
+        }
+
+        // 渲染记忆趋势图
+        function renderMemoryTrendChart(activity) {
+            const ctx = document.getElementById('memoryTrendChart').getContext('2d');
+            const dates = activity.map(a => a.date);
+            const counts = activity.map(a => a.count);
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: '每日记忆创建数',
+                        data: counts,
+                        borderColor: '#4CAF50',
+                        backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // 渲染最近记忆列表
+        function renderRecentMemories(memories) {
+            const container = document.getElementById('recentMemories');
+            if (memories.length === 0) {
+                container.innerHTML = '<li>暂无记忆</li>';
+                return;
+            }
+            
+            let html = '';
+            memories.forEach(memory => {
+                html += `
+                    <li class="recent-item">
+                        <strong>${memory.title}</strong><br>
+                        <span style="font-size: 0.9em; color: #666;">
+                            分类: ${memory.category} | ${new Date(memory.created_at).toLocaleDateString()}
+                        </span>
+                    </li>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // 渲染分类统计图
+        function renderCategoryChart(categories) {
+            const ctx = document.getElementById('categoryChart').getContext('2d');
+            const labels = categories.map(c => c.category);
+            const data = categories.map(c => c.count);
+            
+            // 生成随机颜色
+            const colors = labels.map((_, i) => 
+                `hsl(${i * 360 / labels.length}, 70%, 60%)`
+            );
+            
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: colors
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+        });
+    </script>
+</body>
+</html>

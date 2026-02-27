@@ -1,0 +1,60 @@
+{
+  "market_report": {
+    "reports": [
+      {"date": "2026-02-27", "score": 58.7, "signal": "中性偏多"},
+      {"date": "2026-02-26", "score": 56.8, "signal": "中性偏谨慎"},
+      {"date": "2026-02-25", "score": 54.6, "signal": "中性偏谨慎"}
+    ],
+    "dimensions": [
+      {"name": "货币政策与流动性", "score": 69, "weight": 27, "contribution": 18.63},
+      {"name": "实体经济与前瞻指标", "score": 55, "weight": 18, "contribution": 9.90},
+      {"name": "企业基本面与估值", "score": 36, "weight": 15, "contribution": 5.40},
+      {"name": "劳动力与消费健康度", "score": 50, "weight": 14, "contribution": 7.00},
+      {"name": "房地产市场", "score": 56, "weight": 7, "contribution": 3.92},
+      {"name": "市场情绪与跨资产波动率", "score": 58, "weight": 5, "contribution": 2.90},
+      {"name": "加密货币市场指标", "score": 57, "weight": 5, "contribution": 2.85},
+      {"name": "AI发展指标", "score": 61, "weight": 5, "contribution": 3.05},
+      {"name": "大宗商品与外部宏观", "score": 59, "weight": 4, "contribution": 2.36},
+      {"name": "跨境资本流动与套利交易风险", "score": 52, "weight": 3, "contribution": 1.56},
+      {"name": "极端流动性收紧预警", "score": 55, "weight": 2, "contribution": 1.10}
+    ],
+    "metrics": [
+      {"name": "10Y-3M利差", "value": "+34bps", "status": "已验证"},
+      {"name": "VIX指数", "value": "18.63", "status": "已验证"},
+      {"name": "GDP增长率", "value": "+1.4%", "status": "已验证"},
+      {"name": "失业率", "value": "4.3%", "status": "已验证"},
+      {"name": "核心CPI", "value": "+2.5%", "status": "已验证"},
+      {"name": "BTC价格", "value": "$67,371.90", "status": "已验证"},
+      {"name": "USDC市值", "value": "$75.3B", "status": "已验证"},
+      {"name": "SOFR", "value": "3.65%", "status": "已验证"},
+      {"name": "美联储资产负债表", "value": "$6.60T", "status": "已验证"}
+    ],
+    "ai_data": {
+      "monthly_tokens": 30.0,
+      "mom_growth": 9.1
+    }
+  },
+  "viking_memory": {
+    "total_memories": 15,
+    "category_stats": [
+      {"category": "general", "count": 12},
+      {"category": "database_setup", "count": 1},
+      {"category": "model_optimization", "count": 1},
+      {"category": "deployment", "count": 1}
+    ],
+    "priority_stats": [
+      {"priority": 0, "count": 14},
+      {"priority": 1, "count": 1}
+    ],
+    "recent_activity": [
+      {"date": "2026-02-27", "count": 8}
+    ],
+    "recent_memories": [
+      {"id": 15, "title": "Main Memory", "category": "general", "created_at": "2026-02-27T23:30:00"},
+      {"id": 14, "title": "Memory Openviking Db", "category": "general", "created_at": "2026-02-27T23:30:00"},
+      {"id": 13, "title": "Complete Summary", "category": "general", "created_at": "2026-02-27T23:30:00"},
+      {"id": 12, "title": "Memory 11D Model", "category": "model_optimization", "created_at": "2026-02-27T23:30:00"},
+      {"id": 11, "title": "Memory Database Setup", "category": "database_setup", "created_at": "2026-02-27T23:30:00"}
+    ]
+  }
+}
