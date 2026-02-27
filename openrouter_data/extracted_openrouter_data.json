@@ -1,0 +1,154 @@
+{
+  "general_rankings": [
+    {
+      "rank": 1,
+      "model_name": "Claude Opus 4.6",
+      "provider": "anthropic",
+      "weekly_tokens_billion": 615.5,
+      "week_over_week_change": -12.36
+    },
+    {
+      "rank": 2,
+      "model_name": "Trinity Large Preview",
+      "provider": "arcee-ai",
+      "weekly_tokens_billion": 519.5,
+      "week_over_week_change": 2.76
+    },
+    {
+      "rank": 3,
+      "model_name": "Gemini 3 Pro Preview",
+      "provider": "google",
+      "weekly_tokens_billion": 123.0,
+      "week_over_week_change": -33.72
+    }
+  ],
+  "coding_benchmark": [
+    {
+      "rank": 1,
+      "model_name": "MiniMax M2.5",
+      "provider": "minimax",
+      "weekly_tokens_billion": 1730.0,
+      "week_over_week_change": 47.0
+    },
+    {
+      "rank": 2,
+      "model_name": "Gemini 3 Flash Preview",
+      "provider": "google",
+      "weekly_tokens_billion": 965.0,
+      "week_over_week_change": 18.0
+    },
+    {
+      "rank": 3,
+      "model_name": "DeepSeek V3.2",
+      "provider": "deepseek",
+      "weekly_tokens_billion": 793.0,
+      "week_over_week_change": 8.0
+    },
+    {
+      "rank": 4,
+      "model_name": "Grok 4.1 Fast",
+      "provider": "x-ai",
+      "weekly_tokens_billion": 757.0,
+      "week_over_week_change": 42.0
+    },
+    {
+      "rank": 5,
+      "model_name": "GLM 5",
+      "provider": "z-ai",
+      "weekly_tokens_billion": 705.0,
+      "week_over_week_change": 32.0
+    },
+    {
+      "rank": 6,
+      "model_name": "Kimi K2.5",
+      "provider": "moonshotai",
+      "weekly_tokens_billion": 611.0,
+      "week_over_week_change": 51.0
+    },
+    {
+      "rank": 7,
+      "model_name": "Claude Opus 4.6",
+      "provider": "anthropic",
+      "weekly_tokens_billion": 605.0,
+      "week_over_week_change": 2.0
+    },
+    {
+      "rank": 8,
+      "model_name": "Claude Sonnet 4.6",
+      "provider": "anthropic",
+      "weekly_tokens_billion": 530.0,
+      "week_over_week_change": 363.0
+    },
+    {
+      "rank": 9,
+      "model_name": "Trinity Large Preview (free)",
+      "provider": "arcee-ai",
+      "weekly_tokens_billion": 510.0,
+      "week_over_week_change": 17.0
+    },
+    {
+      "rank": 10,
+      "model_name": "Claude Sonnet 4.5",
+      "provider": "anthropic",
+      "weekly_tokens_billion": 506.0,
+      "week_over_week_change": 13.0
+    }
+  ],
+  "top_apps": [
+    {
+      "rank": 1,
+      "app_name": "OpenClaw",
+      "app_url": "https://openclaw.ai/",
+      "weekly_tokens_billion": 329.0,
+      "description": "The AI that actually does things"
+    },
+    {
+      "rank": 2,
+      "app_name": "Kilo Code",
+      "app_url": "https://kilocode.ai/",
+      "weekly_tokens_billion": 160.0,
+      "description": "AI coding agent for VS Code"
+    },
+    {
+      "rank": 3,
+      "app_name": "BLACKBOXAI",
+      "app_url": "https://blackbox.ai/",
+      "weekly_tokens_billion": 90.0,
+      "description": "AI agent for builders"
+    },
+    {
+      "rank": 4,
+      "app_name": "liteLLM",
+      "app_url": "https://litellm.ai/",
+      "weekly_tokens_billion": 58.5,
+      "description": "Open-source library to simplify LLM calls"
+    },
+    {
+      "rank": 5,
+      "app_name": "Descript",
+      "app_url": "https://descript.com/",
+      "weekly_tokens_billion": 41.6,
+      "description": "AI Video & Podcast Editor"
+    }
+  ],
+  "monthly_total_tokens_trillion": 30.0,
+  "data_timestamp": "2026-02-28",
+  "analysis_insights": {
+    "fastest_growing_models": [
+      "Claude Sonnet 4.6 (+363%)",
+      "Kimi K2.5 (+51%)",
+      "MiniMax M2.5 (+47%)",
+      "Grok 4.1 Fast (+42%)"
+    ],
+    "declining_models": [
+      "Gemini 3 Pro Preview (-33.72%)",
+      "Claude Opus 4.6 (-12.36%)"
+    ],
+    "market_trends": [
+      "Programming-focused models gaining traction",
+      "Anthropic models showing mixed performance (Opus declining, Sonnet exploding)",
+      "Chinese models (MiniMax, DeepSeek, GLM, Kimi) performing well in coding scenarios",
+      "Open source and developer tools dominating app rankings"
+    ]
+  }
+}
