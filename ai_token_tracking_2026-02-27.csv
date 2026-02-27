@@ -1,0 +1,5 @@
+Date,Period Type,Provider,Model,Token Consumption (B),Week-over-Week Change (%),Notes
+2026-02-27,Monthly Total,OpenRouter,All Models,30000,,Monthly total across all models
+2026-02-27,Weekly,anthropic,Claude Opus 4.6,615.5,-12.36,Top model by consumption
+2026-02-27,Weekly,arcee-ai,Trinity Large Preview,519.5,2.76,Fastest growing model
+2026-02-27,Weekly,google,Gemini 3 Pro Preview,123.0,-33.72,Significant decline

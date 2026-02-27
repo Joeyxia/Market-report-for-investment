@@ -1,0 +1,42 @@
+{
+  "monthly_data": {
+    "2026-02": {
+      "total_tokens_t": 30,
+      "users_millions": 5,
+      "models_count": 300,
+      "providers_count": 60,
+      "collection_date": "2026-02-27"
+    }
+  },
+  "weekly_model_data": {
+    "2026-02-27": [
+      {
+        "model_name": "Claude Opus 4.6",
+        "provider": "anthropic",
+        "tokens_b": 615.5,
+        "weekly_trend_pct": -12.36,
+        "rank": 1
+      },
+      {
+        "model_name": "Trinity Large Preview", 
+        "provider": "arcee-ai",
+        "tokens_b": 519.5,
+        "weekly_trend_pct": 2.76,
+        "rank": 2
+      },
+      {
+        "model_name": "Gemini 3 Pro Preview",
+        "provider": "google",
+        "tokens_b": 123.0,
+        "weekly_trend_pct": -33.72,
+        "rank": 3
+      }
+    ]
+  },
+  "metadata": {
+    "source": "OpenRouter.ai",
+    "last_updated": "2026-02-27T12:30:00Z",
+    "notes": "This is the baseline data collection. Future updates will enable true MOM calculations.",
+    "data_quality": "Platform-specific, not global total"
+  }
+}
