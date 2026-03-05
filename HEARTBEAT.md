@@ -1,5 +1,14 @@
 # HEARTBEAT.md
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+## 每日记忆整理任务
+- 每天凌晨00:00（Asia/Shanghai）自动整理 Openviking 记忆系统
+- 读取 MEMORY.md 和当日记忆文件
+- 清理和归档过期的记忆内容
+- 更新记忆索引
 
-# Add tasks below when you want the agent to check something periodically.
+## 每小时系统状态检查任务
+- 每隔一小时（从2026-03-05 13:24开始）检查 OpenViking 系统及其数据库的工作状态
+- 验证数据库架构完整性
+- 统计并摘要记忆数据（当前约19条）
+- 检查关键配置信息（API密钥、代理设置、SOP流程等）
+- 确保 OpenViking 服务正常运行
